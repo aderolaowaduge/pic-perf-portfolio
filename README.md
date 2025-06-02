@@ -6,7 +6,6 @@ A clean, interactive photography portfolio built with **Vite**, **React**, and *
 
 - Responsive image gallery with hover effects  
 - Parallax scrolling quote section  
-- Light and dark color adaptation  
 - Clickable images for future modal or full-screen display
 
 ## Tech Stack
