@@ -1,0 +1,125 @@
+/* Import Google font for handwritten style */
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+/* Import TailwindCSS base styles */
+@import "tailwindcss";
+
+/* 
+  Define CSS custom properties (variables) for Earth Tone theme
+  Using OKLCH color space for better perceptual uniformity
+*/
+@theme {
+  /* Earth Tone Color Palette */
+  --color-earth-bg: oklch(0.1397 0.0123 29);        /* Dark rich soil brown background */
+  --color-earth-light: oklch(0.95 0.02 80);         /* Warm beige/light text color */
+  --color-earth-dark: oklch(0.35 0.05 30);          /* Medium dark brown */
+  --color-earth-accent: oklch(0.425 0.0691 138.18); /* Light sage green accent */
+  --color-earth-sand: oklch(0.58 0.1085 81);        /* Warm sandy color */
+  --color-earth-blue: oklch(0.65 0.12 250);         /* Muted sky blue */
+
+  /* Font families */
+  --font-sans: 'Satoshi', 'Helvetica', 'Arial', sans-serif;
+  --font-handwritten: 'Nothing You Could Do', cursive, sans-serif;
+
+  /* Common UI variables */
+  --radius-large: 1rem;               /* Large border radius */
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Global root styles */
+:root {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+
+  /* Improve font rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Earth tone background and text colors */
+  background-color: var(--color-earth-bg);
+  color: var(--color-earth-light);
+}
+
+/* Anchor link styles */
+a {
+  font-weight: 500;
+  color: var(--color-earth-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: oklch(0.7 0.2 70); /* Slightly brighter accent on hover */
+}
+
+/* Button base styles */
+button {
+  border-radius: var(--radius-large);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+}
+
+button:hover {
+  border-color: var(--color-earth-accent);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Header styles */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--color-earth-light);
+}
+
+/* Image overlay for hover effect */
+.image-overlay {
+  background-color: oklch(0.1 0.1 35 / 0.6); /* Semi-transparent dark earthy overlay */
+}
+
+/* Footer styling */
+footer {
+  color: var(--color-earth-accent);
+  opacity: 0.7;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* Smooth scroll for anchor navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset scroll margin to accommodate fixed navbar height */
+section {
+  scroll-margin-top: 80px; /* Adjust based on your navbar height */
+}
+
+/* Optional: Light mode overrides for prefers-color-scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: var(--color-earth-light);
+    color: var(--color-earth-dark);
+  }
+
+  a:hover {
+    color: var(--color-earth-blue);
+  }
+
+  button {
+    background-color: var(--color-earth-light);
+    color: var(--color-earth-dark);
+  }
+}
